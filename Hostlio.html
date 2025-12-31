@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HostLio Rentals</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Smooth Scroll + Floating animations + Scrollbar hide -->
+  <style>
+    html { scroll-behavior: smooth; }
+
+    .float {
+      animation: float 4s ease-in-out infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0px); }
+    }
+
+    .scrollbar-hide::-webkit-scrollbar { display: none; }
+    .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+<!-- ========== NAVBAR ========== -->
+<header class="backdrop-blur-lg bg-white/30 shadow-lg fixed top-0 left-0 w-full z-50 border-b border-white/40">
+  <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+
+    <!-- LEFT TITLE -->
+    <h1 class="text-3xl font-extrabold bg-gradient-to-r from-red-600 to-orange-500 bg-clip-text text-transparent">
+      Hostlio
+    </h1>
+
+    <!-- NAV LINKS -->
+    <nav class="hidden md:flex space-x-6 font-medium">
+      <a href="#home" class="hover:text-red-500 transition">Home</a>
+      <a href="#about" class="hover:text-red-500 transition">About Us</a>
+      <a href="#contact" class="hover:text-red-500 transition">Contact Us</a>
+      <a href="#partner" class="hover:text-red-500 transition">Become Our Partner</a>
+    </nav>
+
+    <!-- CTA + LOGO -->
+    <div class="flex items-center gap-4">
+      <a href="#contact"
+         class="hidden md:inline-block bg-gradient-to-r from-red-500 to-orange-500 text-white px-5 py-2 rounded-md shadow-md font-semibold transition hover:scale-105 hover:shadow-red-500/50 hover:brightness-110">
+        Book Now
+      </a>
+
+      
+    </div>
+
+    <button class="md:hidden" onclick="toggleMenu()">☰</button>
+  </div>
+
+  <div id="mobileMenu" class="hidden md:hidden flex flex-col p-4 space-y-3 font-medium bg-white/70">
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#contact">Contact Us</a>
+    <a href="#partner">Become Our Partner</a>
+  </div>
+</header>
+
+
+<!-- ========== HERO SECTION ========== -->
+<section id="home" class="container mx-auto px-6 pt-28 pb-16 grid md:grid-cols-2 gap-10 bg-gradient-to-r from-blue-400 to-blue-600 ">
+  <div class="flex flex-col justify-center">
+    <h1 class="text-5xl font-extrabold leading-snug">
+      Find Your <span class="text-red-600">Perfect Home</span><br> For Rent & PG Stay
+    </h1>
+    <p class="mt-4 text-lg text-gray-600">
+      HostLio brings premium rooms, PGs, flats & family houses with modern facilities, comfort and security.
+    </p>
+
+    <a href="#properties"
+       class="mt-6 bg-gradient-to-r from-red-500 to-orange-500 text-white px-6 py-3 rounded-md font-semibold shadow-md hover:scale-105 hover:shadow-red-500/50 transition">
+      Explore Properties
+    </a>
+  </div>
+
+  <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994"
+       class="rounded-xl shadow-xl float">
+</section>
+
+
+<!-- ========== FEATURED PROPERTIES (YOUR UPLOADED IMAGES) ========== -->
+<section id="properties" class="py-16 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-4xl font-bold mb-10">Featured Properties</h2>
+
+    <div class="grid md:grid-cols-3 gap-6">
+
+      <!-- 1 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition cursor-pointer">
+        <img src="frames-for-your-heart-FqqiAvJejto-unsplash.jpg"
+             class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold">Cozy Work Studio</h3>
+          <p class="text-gray-600 mt-1">₹8000/month · Perfect for students & freelancers</p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition cursor-pointer">
+        <img src="eduard-uY2kic9wlmc-unsplash.jpg"
+             class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold">Luxury Bedroom Suite</h3>
+          <p class="text-gray-600 mt-1">₹15,500/month · Attached washroom & balcony</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-2xl transition cursor-pointer">
+        <img src="swaroop-satheesh-7uIeIKgZAms-unsplash.jpg"
+             class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="text-xl font-bold">Heritage Family House</h3>
+          <p class="text-gray-600 mt-1">₹22,000/month · Spacious & fully furnished</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= AMENITIES (LEFT INTRO + RIGHT 2 ROW GRID) ================= -->
+<section id="amenities" class="container mx-auto px-6 py-16">
+  
+  <!-- Section Title -->
+  <h2 class="text-4xl font-bold mb-6">Amenities</h2>
+
+  <!-- 2 column layout -->
+  <div class="grid md:grid-cols-2 gap-10">
+
+    <!-- LEFT SIDE INTRO TEXT -->
+    <div class="space-y-4">
+      <h3 class="text-3xl font-semibold text-gray-800">
+        Enjoy Exclusive & Essential Comforts
+      </h3>
+      <p class="text-gray-600 leading-relaxed">
+        We ensure your stay feels like home — clean, secure and packed with 
+        daily-need amenities. Whether you're a student, working professional or 
+        a family, our facilities keep your lifestyle comfortable and stress-free.
+      </p>
+      <button class="mt-4 bg-black text-white px-6 py-3 rounded-full hover:opacity-90 transition">
+        Learn More →
+      </button>
+    </div>
+
+    <!-- RIGHT SIDE BADGES (DOUBLE ROW LOOK) -->
+    <div class="grid grid-cols-2 gap-4">
+
+      <span class="bg-green-200 px-6 py-3 rounded-full text-gray-800 font-medium">
+        📸 CCTV Camera
+      </span>
+      <span class="bg-green-200 px-6 py-3 rounded-full text-gray-800 font-medium">
+        🏥 Medical Center
+      </span>
+      <span class="bg-green-200 px-6 py-3 rounded-full text-gray-800 font-medium">
+        🚻 Separate Washroom
+      </span>
+      <span class="bg-green-200 px-6 py-3 rounded-full text-gray-800 font-medium">
+        🐶 Pet Friendly
+      </span>
+      <span class="bg-green-200 px-6 py-3 rounded-full text-gray-800 font-medium">
+        🍽 Attached Kitchen
+      </span>
+      <span class="bg-green-200 px-6 py-3 rounded-full text-gray-800 font-medium">
+        🛁 Attached Bathroom
+      </span>
+      <span class="bg-green-200 px-6 py-3 rounded-full text-gray-800 font-medium">
+        🚗 Parking Space
+      </span>
+      <span class="bg-green-200 px-6 py-3 rounded-full text-gray-800 font-medium">
+        🛏 Bed Available
+      </span>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ========== COMPANY STATS ========== -->
+<section class="bg-gradient-to-r from-red-600 to-orange-500 text-white py-16">
+  <div class="container mx-auto px-6 grid md:grid-cols-4 gap-6 text-center">
+    <div class="text-3xl font-bold"><span id="stat1"></span>+<br>Properties Sold</div>
+    <div class="text-3xl font-bold"><span id="stat2"></span>+<br>Happy Clients</div>
+    <div class="text-3xl font-bold"><span id="stat3"></span>+<br>Years Experience</div>
+    <div class="text-3xl font-bold"><span id="stat4"></span><br>Awards Won</div>
+  </div>
+</section>
+
+
+<!-- ========== CONTACT FORM ========== -->
+<section id="contact" class="container mx-auto px-6 py-16">
+  <h2 class="text-4xl font-bold mb-6">Get In Touch</h2>
+
+  <form class="grid gap-4 max-w-xl">
+    <input class="p-3 border rounded" placeholder="Full Name">
+    <input class="p-3 border rounded" placeholder="Email Address">
+    <input class="p-3 border rounded" placeholder="Phone Number">
+    <textarea class="p-3 border rounded" rows="5" placeholder="Message"></textarea>
+
+    <button class="bg-gradient-to-r from-red-500 to-orange-500 text-white px-6 py-3 rounded-md shadow hover:scale-105 hover:shadow-red-500/50 transition">
+      Send Message
+    </button>
+  </form>
+</section>
+
+
+<!-- ========== FOOTER ========== -->
+<footer class="bg-gray-900 text-white py-12">
+  <div class="container mx-auto px-6 grid md:grid-cols-4 gap-6">
+    <div>
+      <h3 class="text-xl font-bold">HostLio</h3>
+      <p class="text-gray-400 mt-2">Modern rental solutions for everyone.</p>
+    </div>
+
+    <div>
+      <h4 class="font-bold">Quick Links</h4>
+      <p class="text-gray-400">Home</p>
+      <p class="text-gray-400">About</p>
+      <p class="text-gray-400">Contact</p>
+    </div>
+
+    <div>
+      <h4 class="font-bold">Services</h4>
+      <p class="text-gray-400">Rooms</p>
+      <p class="text-gray-400">PG</p>
+      <p class="text-gray-400">Flats</p>
+      <p class="text-gray-400">Family House</p>
+    </div>
+
+    <div>
+      <h4 class="font-bold">Contact Info</h4>
+      <p class="text-gray-400">📞 +91 99999-99999</p>
+      <p class="text-gray-400">📧 support@hostlio.com</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- ===== JS COUNTERS ===== -->
+<script>
+  function toggleMenu(){
+    document.getElementById('mobileMenu').classList.toggle('hidden');
+  }
+
+  function animateCounter(id, target) {
+    let count = 0;
+    const speed = Math.ceil(target / 80);
+    const interval = setInterval(() => {
+      count += speed;
+      if (count >= target) {
+        count = target;
+        clearInterval(interval);
+      }
+      document.getElementById(id).textContent = count;
+    }, 40);
+  }
+
+  animateCounter("stat1", 1250);
+  animateCounter("stat2", 850);
+  animateCounter("stat3", 15);
+  animateCounter("stat4", 25);
+</script>
+
+</body>
+</html>
